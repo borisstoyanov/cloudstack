@@ -198,7 +198,7 @@ class TestRouterDns(cloudstackTestCase):
 
         self.logger.debug("Starting test_router_dns_externalips...")
 
-        public_ip = test_router_common()[0]
+        public_ip = self.test_router_common()[0]
 
         self.logger.debug("Querying VR DNS IP: " + public_ip.ipaddress)
         resolver = dns.resolver.Resolver()
@@ -215,7 +215,7 @@ class TestRouterDns(cloudstackTestCase):
         """Checks that guest VM can query VR DNS"""
 
         self.logger.debug("Starting test_router_dns_guestipquery...")
-        public_ip = test_router_common()[0]
+        public_ip = self.test_router_common()[0]
 
         self.logger.debug("Creating Firewall rule for VM ID: %s" % self.vm.id)
         FireWallRule.create(
